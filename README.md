@@ -56,8 +56,9 @@ help [command]                   display help for command
 ```
 
 ### archway accounts
-Options: 
-| Syntax      | Description |
+ 
+| Option      | Description |
 | ----------- | ----------- |
-| Header      | Title       |
-| Paragraph   | Text        |
+| --add <label>      | Add a new wallet     |
+| --docker   | Use the docker version of archwayd   |
+| --help  | display help for command   |
