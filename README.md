@@ -54,3 +54,6 @@ test                             Run unit tests
 tx [options]                     Execute a transaction on Archway network
 help [command]                   display help for command
 ```
+
+### archway accounts
+Options: 
