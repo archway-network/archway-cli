@@ -57,8 +57,7 @@ help [command]                   display help for command
 
 ### archway accounts
 Options: 
-| -add <label>  |  add a new wallet |
-|---|---|---|---|---|
-|   |   |   |   |   |
-|   |   |   |   |   |
-|   |   |   |   |   |
+| Syntax      | Description |
+| ----------- | ----------- |
+| Header      | Title       |
+| Paragraph   | Text        |
