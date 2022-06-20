@@ -62,3 +62,21 @@ help [command]                   display help for command
 | --add <label>      | Add a new wallet     |
 | --docker   | Use the docker version of archwayd   |
 | --help  | display help for command   |
+
+### archway build
+ 
+| Option      | Description |
+| ----------- | ----------- |
+| --help  | display help for command   |
+
+### archway configure
+ 
+| Option      | Description |
+| ----------- | ----------- |
+| --m     | Add a new wallet     |
+| --docker   | Use the docker version of archwayd   |
+| --help  | display help for command   |
+
+
+
+
