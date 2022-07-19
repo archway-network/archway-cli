@@ -9,7 +9,7 @@ const { createClient } = require('./clients/archwayd');
 const { Environments, Testnets } = require('./networks');
 const { isJson, isProjectName, isArchwayAddress } = require('./util/validators');
 const { checkSemanticVersion } = require('./util/semvar');
-
+const {ArchwaySigningClient} = require('@archwayhq/arch3-core');
 /**
  * Gets the version from package.json
  */
@@ -116,7 +116,7 @@ Program
   .addOption(DockerOption)
   .action(async ({ ...options }) => {
     options = await updateWithDockerOptions(options);
-    const archwayd = await createClient(options);
+    const archwayd = await ArchwaySigningClient.connectSigner(options)
     await Tools.Instantiate(archwayd, options);
   });
 

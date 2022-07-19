@@ -3,7 +3,7 @@ const chalk = require('chalk');
 const { Config } = require('../util/config');
 const { prompts, PromptCancelledError } = require('../util/prompts');
 const { isArchwayAddress, isJson } = require('../util/validators');
-
+const {ArchwayClient} = require('@archwayhq/arch3-core')
 async function parseQueryOptions(config, { args, flags = [], options } = {}) {
   if (!_.isEmpty(args) && !isJson(args)) {
     throw new Error(`Arguments should be a JSON string, received "${args}"`);
@@ -38,8 +38,10 @@ async function querySmart(archwayd, { module, type, options }) {
   const config = await Config.open();
   const { node, contract, args, ...txOptions } = await parseQueryOptions(config, options);
   console.info(chalk`Querying smart contract {cyan ${contract}}...`);
-  const response = await archwayd.query.smartContract(module, type, contract, args, { node, ...txOptions });
-  console.info(chalk`{green Query successful {cyan ${response}}}\n`);
+  const client = await ArchwayClient.connect(node);
+  const args_parsed = JSON.parse(args);
+  const response = await client.queryContractSmart(contract,args_parsed);
+  console.info(chalk`{green Query successful {cyan ${JSON.stringify(response)}}}\n`);
 }
 
 async function main(archwayd, { module, type, options }) {

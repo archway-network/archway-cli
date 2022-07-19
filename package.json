@@ -43,6 +43,8 @@
     "lint:fix": "npx eslint --fix ./src"
   },
   "dependencies": {
+    "@archwayhq/arch3-core": "file:package copy.tgz",
+    "arch3-root": "file:package.tgz",
     "async-retry": "^1.3.3",
     "axios": "^0.21.4",
     "chalk": "^4.1",
@@ -50,6 +52,7 @@
     "debug": "^4.3.3",
     "lodash": "^4.17.21",
     "ora": "^5.4.1",
+    "package": "^1.0.1",
     "promisify-child-process": "^4.1.1",
     "prompts": "^2.4"
   },
